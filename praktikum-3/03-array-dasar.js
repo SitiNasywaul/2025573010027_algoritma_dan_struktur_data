@@ -1,8 +1,9 @@
 const mahasiswa = ['Budi', 'Siti', 'Ahmad', 'Rina'];
-const nilai     = [85, 92, 78, 95, 88];
+const nilai = [85, 92, 78, 88];
+
 console.log('=== Array Awal ===');
 console.log('Mahasiswa:', mahasiswa);
-console.log('Nilai    :', nilai);
+console.log('Nilai :', nilai);
 console.log('Jumlah mahasiswa:', mahasiswa.length);
 
 console.log('\n=== Akses Elemen ===');
@@ -14,51 +15,57 @@ mahasiswa[1] = 'Siti Rahayu';
 console.log('\nSetelah diubah:', mahasiswa);
 
 console.log('\n=== Manipulasi Array ===');
-mahasiswa.push('Doni');
-console.log('Setelah unshift :', mahasiswa);
+mahasiswa.push('Doni'); 
+console.log('Setelah push :', mahasiswa);
 
 mahasiswa.unshift('Zahra');
 console.log('Setelah unshift :', mahasiswa);
 
-const dihapusAkhir = mahasiswa.pop();
+const dihapusAkhir = mahasiswa.pop(); 
 console.log('Dihapus (pop) :', dihapusAkhir);
-console.log('Setelah pop  :', mahasiswa);
+console.log('Setelah pop :', mahasiswa);
 
-const dihapusAwal = mahasiswa.shift();
+const dihapusAwal = mahasiswa.shift(); 
 console.log('Dihapus (shift) :', dihapusAwal);
 console.log('Setelah shift :', mahasiswa);
 
 console.log('\n=== Pencarian ===');
 console.log('Indeks Ahmad :', mahasiswa.indexOf('Ahmad'));
-console.log('Ada Rina?   :', mahasiswa.includes('Rina'));
-console.log('Ada Budi?   :', mahasiswa.includes('Budi'));
+console.log('Ada Rina? :', mahasiswa.includes('Rina'));
+console.log('Ada Budi? :', mahasiswa.includes('Budi'));
 
-const sebagian = nilai.slice(1, 4);
+const sebagian = nilai.slice(1, 4); 
 console.log('\nNilai asli :', nilai);
 console.log('Slice [1,4] :', sebagian);
 
-// Daftar belanja awal (5 item)
-let daftarBelanja = ["Beras", "Gula", "Minyak", "Telur", "Kopi"];
+console.log('');
+console.log('=== Latihan3 ===');
 
-console.log("=== Daftar Belanja Awal ===");
 
-// Tampilkan semua item + nomor urut
+let daftarBelanja = ['Beras', 'Gula', 'Telur', 'Minyak', 'Garam'];
+
+console.log("--- Daftar Belanja Awal ---");
 for (let i = 0; i < daftarBelanja.length; i++) {
+ 
   console.log(`${i + 1}. ${daftarBelanja[i]}`);
 }
 
-// Tambah 2 item di akhir
-daftarBelanja.push("Susu");
-daftarBelanja.push("Roti");
 
-console.log("\nSetelah push:", daftarBelanja);
+daftarBelanja.push('Susu', 'Kopi');
+console.log("\n(Susu dan Kopi ditambahkan ke daftar)");
 
-// Hapus item pertama
+
 let itemDihapus = daftarBelanja.shift();
-console.log("Item yang dihapus:", itemDihapus);
+console.log(`Item yang dihapus dari daftar pertama: ${itemDihapus}`);
 
-// Cek apakah ada item Susu
-console.log("Ada Susu?:", daftarBelanja.includes("Susu"));
 
-// Tampilkan jumlah item akhir
-console.log("Jumlah item akhir:", daftarBelanja.length);
+let adaSusu = daftarBelanja.includes('Susu');
+if (adaSusu) {
+  console.log("Cek Susu: Ya, Susu ada di dalam daftar belanja.");
+} else {
+  console.log("Cek Susu: Tidak, Susu tidak ada di daftar.");
+}
+
+console.log(`Jumlah total item sekarang: ${daftarBelanja.length} item.`);
+
+console.log("Daftar akhir:", daftarBelanja);

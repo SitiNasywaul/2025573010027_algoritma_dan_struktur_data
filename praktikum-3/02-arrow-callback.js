@@ -9,12 +9,12 @@ const kuadrat = (x) => {
 const kuadratRingkas = x => x * x;
 
 console.log('=== Perbandingan Penulisan ===');
-console.log('Biasa    :', kuadratBiasa(5));
-console.log('Arrow    :', kuadrat(5));
-console.log('Ringkas  :', kuadratRingkas(5));
+console.log('Biasa  :', kuadratBiasa(5));
+console.log('Arrow  :', kuadrat(5));
+console.log('Ringkas:', kuadratRingkas(5));
 
 const luas = (panjang, lebar) => panjang * lebar;
-const salam = (nama, waktu) => `Selamat ${waktu}, ${nama}!`;
+const salam = (nama, waktu) => `Selamat ${waktu}, ${nama}`;
 
 console.log('Luas 4x6 :', luas(4, 6));
 console.log(salam('Budi', 'Pagi'));
@@ -25,9 +25,9 @@ function lakukanOperasi(angka, operasiCallback) {
     console.log(`Hasil setelah operasi: ${hasil}`);
 }
 
-console.log('\n=== Callback ===');
+console.log('\n=== callback ===');
 lakukanOperasi(7, kuadratRingkas);
-lakukanOperasi(10, x => x = 100);
+lakukanOperasi(10, x => x + 100);
 lakukanOperasi(20, function(x) {
     return x / 2;
 });
@@ -37,29 +37,35 @@ console.log('Pesan 1: Sebelum timer');
 
 setTimeout(() => {
     console.log('Pesan 3: Ini dari dalam setTimeout (setelah 1 detik)');
-}, 1000);
+}, 100);
 
 console.log('Pesan 2: Setelah mendaftarkan timer');
 
-// Arrow function ubah huruf jadi kapital
-const keHurufBesar = (text) => text.toUpperCase();
+console.log('');
+console.log('=== Latihan2 ===');
 
-// Arrow function tambah tanda seru
-const tambahSeru = (text) => text + "!!";
 
-// Arrow function hitung jumlah kata
-const hitungKata = (text) => text.split(" ").length;
+const keHurufBesar = (str) => str.toUpperCase();
 
-// Function callback processor
+const tambahSeru = (str) => str + "!!!";
+
+const hitungKata = (str) => str.split(' ').length;
+
+
 function prosesKalimat(kalimat, transformasiCallback) {
   const hasil = transformasiCallback(kalimat);
-  console.log(hasil);
+  
+  console.log("Hasil transformasi:", hasil);
 }
 
-// Kalimat uji
-const kalimat = "belajar javascript itu menyenangkan";
 
-// Uji dengan 3 callback
-prosesKalimat(kalimat, keHurufBesar);
-prosesKalimat(kalimat, tambahSeru);
-prosesKalimat(kalimat, hitungKata);
+const teks = 'belajar javascript itu menyenangkan';
+
+console.log("--- Menguji keHurufBesar ---");
+prosesKalimat(teks, keHurufBesar);
+
+console.log("\n--- Menguji tambahSeru ---");
+prosesKalimat(teks, tambahSeru);
+
+console.log("\n--- Menguji hitungKata ---");
+prosesKalimat(teks, hitungKata);

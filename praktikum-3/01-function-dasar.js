@@ -1,28 +1,28 @@
 function sapa() {
-    console.log('Halo! Selamat datang di praktikum Java Script.');
+    console.log('Halo! Selamat datang di pratikum JavaScript.');
 }
 sapa();
 sapa();
 
 function sapaNama(nama) {
-    console.log(`Halo, ${nama}! Seamat belajar.`);
+    console.log(`Halo, #{nama}! Selamat belajar.`);
 }
 sapaNama('Budi');
 sapaNama('Siti');
-
 
 function tambah(angka1, angka2) {
     const hasil = angka1 + angka2;
     return hasil;
 }
 
-const hasilPenjumlahan = tambah(10, 25);
+const hasilPenjumlahan = tambah(10,25);
 console.log('10 + 25 =', hasilPenjumlahan);
 console.log('7 + 13 =', tambah(7, 13));
 
 function hitung(nilai, pengali = 2) {
     return nilai * pengali;
 }
+
 console.log(hitung(5));
 console.log(hitung(5, 3));
 
@@ -37,45 +37,50 @@ function cekScope() {
 cekScope();
 console.log(pesanGlobal);
 
-// Function pengurangan
+
+console.log('');
+console.log('=== Latihan1 ===');
+
 function kurang(a, b) {
   return a - b;
 }
 
-// Function perkalian
+
 function kali(a, b) {
   return a * b;
 }
 
-// Function pembagian
+
 function bagi(a, b) {
   if (b === 0) {
-    console.log("Error: tidak bisa membagi dengan nol");
+    console.log('Error: tidak bisa membagi dengan nol');
     return null;
   }
   return a / b;
 }
 
-// Function kalkulator utama
+
+function tambah(a, b) {
+  return a + b;
+}
+
+
 function kalkulator(a, operator, b) {
-  switch (operator) {
-    case "+":
-      return tambah(a, b); // fungsi tambah diasumsikan sudah ada
-    case "-":
-      return kurang(a, b);
-    case "*":
-      return kali(a, b);
-    case "/":
-      return bagi(a, b);
-    default:
-      console.log("Operator tidak valid");
-      return null;
+  if (operator === '+') {
+    return tambah(a, b);
+  } else if (operator === '-') {
+    return kurang(a, b);
+  } else if (operator === '*') {
+    return kali(a, b);
+  } else if (operator === '/') {
+    return bagi(a, b);
+  } else {
+    return "Operator tidak dikenal";
   }
 }
 
-// Uji function kalkulator (minimal 5)
-console.log(kalkulator(10, "+", 5)); // 15
-console.log(kalkulator(10, "-", 5)); // 5
-console.log(kalkulator(10, "*", 5)); // 50
-console.log(kalkulator(10, "/", 5)); // 2
-console.log(kalkulator(10, "/", 0)); // Error + null
+console.log("Hasil Penjumlahan (10 + 5):", kalkulator(10, '+', 5));
+console.log("Hasil Pengurangan (10 - 5):", kalkulator(10, '-', 5));
+console.log("Hasil Perkalian (10 * 5):", kalkulator(10, '*', 5));
+console.log("Hasil Pembagian (10 / 2):", kalkulator(10, '/', 2));
+console.log("Hasil Pembagian Nol (10 / 0):", kalkulator(10, '/', 0));
