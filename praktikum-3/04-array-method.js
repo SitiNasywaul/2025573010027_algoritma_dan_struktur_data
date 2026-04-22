@@ -7,23 +7,23 @@ nilaiMahasiswa.forEach((nilai, indeks) => {
 
 const gradeHuruf = nilaiMahasiswa.map(nilai => {
     if (nilai >= 90) return 'A';
-    if (nilai >= 90) return 'B';
-    if (nilai >= 90) return 'C';
-    if (nilai >= 90) return 'D';
+    if (nilai >= 80) return 'B';
+    if (nilai >= 70) return 'C';
+    if (nilai >= 60) return 'D';
     return 'E';
 });
 
 console.log('\n=== map: Nilai ke Grade ===');
-console.log('Nilai :', nilaiMahasiswa);
-console.log('Grade :', gradeHuruf);
+console.log('Nilai :', nilaiMahasiswa.join(', '));
+console.log('Grade :', gradeHuruf.join(', '));
 
 const nilaiLulus = nilaiMahasiswa.filter(nilai => nilai >= 60);
 const nilaiGagal = nilaiMahasiswa.filter(nilai => nilai < 60);
 
 console.log('\n=== filter: Lulus dan Tidak Lulus ===');
-console.log('Semua nilai :', nilaiMahasiswa);
-console.log('Semua lulus :', nilaiLulus);
-console.log('Semua gagal :', nilaiGagal);
+console.log('Semua nilai :', nilaiMahasiswa.join(', '));
+console.log('Semua lulus :', nilaiLulus.join(', '));
+console.log('Semua gagal :', nilaiGagal.join(', '));
 
 const totalNilai = nilaiMahasiswa.reduce((akumulator, nilai) => {
     return akumulator + nilai;
@@ -35,11 +35,9 @@ console.log('\n=== reduce: Statistik Nilai ===');
 console.log('Total nilai :', totalNilai);
 console.log('Rata-rata :', rataRata.toFixed(2));
 
-const rataRataNilaiLulus = nilaiMahasiswa
-    .filter(nilai => nilai >= 60)
-    .reduce((acc, val, idx, arr) => {
-        return acc + val / arr.length;
-    }, 0);
+const nilaiLulusArr = nilaiMahasiswa.filter(nilai => nilai >= 60)
+const rataRataNilaiLulus = nilaiLulusArr.reduce((acc, val) => acc + val, 0)
+    / nilaiLulusArr.length;
 
 console.log('\n=== Method Chaining ===');
 console.log('Rata-rata nilai lulus:', rataRataNilaiLulus.toFixed(2));

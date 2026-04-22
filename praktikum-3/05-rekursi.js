@@ -23,7 +23,7 @@ function fibonacci(n) {
 
 console.log('\n=== Fibonacci ===');
 for (let i = 0; i <= 8; i++) {
-    process.stdout.write(fibonacci(i) + '');
+    process.stdout.write(fibonacci(i) + ' ');
 }
 console.log(''); //pindah baris
 

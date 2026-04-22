@@ -64,5 +64,3 @@ for (let angka = 2; angka <= 50; angka++) {
         console.log(angka);
     }
 }
-
-// update pesan commit
